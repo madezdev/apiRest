@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server{
 
@@ -15,6 +16,7 @@ class Server{
     }
 
     middlewares(){
+        this.app.use(cors());
         //Lectura y parseo del body
         this.app.use(express.json());
         this.app.use(express.static('public'));
